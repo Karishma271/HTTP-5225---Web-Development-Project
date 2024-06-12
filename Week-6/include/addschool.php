@@ -1,6 +1,6 @@
 <?php
 
-if($_POST['add' ]){
+if(isset($_POST['add' ])){
     //print_r($_POST);
     //Array ( [schoolName] => Humber College [schoolLevel] => gtfa [phone] => 4378787063 [email] => karishmapatel273@gmail.com )
     $schoolName = $_POST['schoolName'];
