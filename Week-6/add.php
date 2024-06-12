@@ -48,24 +48,25 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <form>
+          <form action = "include/addschool.php" method="POST">
+          
             <div class="mb-3">
               <label for="schoolName" class="form-label">School Name</label>
-              <input type="text" class="form-control" id="schoolName" aria-describedby="schoolName">
+              <input type="text" class="form-control" id="schoolName" name="schoolName" aria-describedby="school Name" >
             </div>
             <div class="mb-3">
-              <label for="schoolType" class="form-label">School Type</label>
-              <input type="text" class="form-control" id="schoolType">
+              <label for="schoolLevel" class="form-label">School Level</label>
+              <input type="text" class="form-control" id="schoolLevel" name="schoolLevel">
             </div>
             <div class="mb-3">
               <label for="phone" class="form-label">Phone</label>
-              <input type="text" class="form-control" id="phone">
+              <input type="text" class="form-control" id="phone" name="phone">
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email">
+              <input type="email" class="form-control" id="email" name="email">
             </div>
-            <button type="submit" class="btn btn-primary">Add School</button>
+            <button type="submit" class="btn btn-primary" name="add">Add School</button>
           </form>
         </div>
       </div>
