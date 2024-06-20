@@ -10,6 +10,8 @@ if(isset($_GET['deleteschool'])){
         set_message('School was deleted successfully!', 'danger');
         header('Location: ../index.php');
       }else{
+
+        
         echo "Failed: " . mysqli_error($connect);
       }
   

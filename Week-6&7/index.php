@@ -53,10 +53,10 @@
                       <div class="card-footer">
                         <div class="row">
                           <div class="col">
-                            <form action="include/updateschool.php method="GET">
+                            <form action="include/updateschool.php  method="GET">
                               <input type="hidden" name="id" value="' . $school['id'] . '">
-                              <button type="submit" name="updateschool" class="btn btn-sm btn-primary">Update</button>
-                            </form>
+                              <button type="submit" class="btn btn-sm btn-primary" name="updateSchool">Update</button>
+                              </form>
                           </div>
                            <div class="col text-end">
                             <form action="include/deleteschool.php" method="GET">
