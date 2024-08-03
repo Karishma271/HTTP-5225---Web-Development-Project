@@ -1,3 +1,8 @@
+<?php 
+  include('inc/functions.php');
+  secure();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +12,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<?php include('reusable/nav.php');?>
+  <?php include('reusable/nav.php'); ?>
 
-<div class="container-fluid">
+  <div class="container-fluid">
     <div class="container">
       <div class="row">
         <div class="col">
@@ -18,10 +23,10 @@
       </div>
     </div>
   </div>
-  
+
   <?php 
-  include('include/functions.php');
-      $connect = mysqli_connect('localhost', 'root', '', 'http5225');
+      
+      $connect = mysqli_connect('localhost', 'root', 'password', 'publicschools');
       if(!$connect){
         die("Connection Failed: " . mysqli_connect_error());
       }
@@ -35,7 +40,7 @@
   <div class="container-fluid">
     <div class="container">
       <div class="row">
-      <div class="col">
+        <div class="col">
           <?php get_message(); ?>
         </div>
       </div>
@@ -53,13 +58,13 @@
                       <div class="card-footer">
                         <div class="row">
                           <div class="col">
-                            <form action="include/updateschool.php  method="GET">
+                            <form action="">
                               <input type="hidden" name="id" value="' . $school['id'] . '">
-                              <button type="submit" class="btn btn-sm btn-primary" name="updateSchool">Update</button>
-                              </form>
+                              <button type="submit" name="updateSchool" class="btn btn-sm btn-primary">Update</button>
+                            </form>
                           </div>
-                           <div class="col text-end">
-                            <form action="include/deleteschool.php" method="GET">
+                          <div class="col text-end">
+                            <form action="inc/deleteSchool.php" method="GET">
                                 <input type="hidden" name="id" value="' . $school['id'] . '">
                                 <button type="submit" name="deleteSchool" class="btn btn-sm btn-danger">Delete</button>
                               </form>

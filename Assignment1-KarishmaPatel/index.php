@@ -18,7 +18,9 @@
     include('./reusable/connect.php');
     include('./reusable/functions.php');
 
-    $query = "SELECT * FROM feel_dance";
+    $query = "SELECT fd.*, m.name AS member_name, m.age AS member_age, m.gender AS member_gender
+              FROM feel_dance fd
+              LEFT JOIN members m ON fd.member_id = m.member_id";
     $result = mysqli_query($connect, $query);
 
     if (mysqli_num_rows($result) > 0) {
@@ -28,8 +30,9 @@
                   <div class="card-body">
                     <h5 class="card-title">' . $row['Name'] . '</h5>
                     <ul class="list-unstyled">
-                      <li><strong>Age:</strong> ' . $row['Age'] . '</li>
-                      <li><strong>Gender:</strong> ' . $row['Gender'] . '</li>
+                      <li><strong>Member:</strong> ' . $row['member_name'] . '</li>
+                      <li><strong>Age:</strong> ' . $row['member_age'] . '</li>
+                      <li><strong>Gender:</strong> ' . $row['member_gender'] . '</li>
                       <li><strong>Fee:</strong> $' . $row['Fee'] . '</li>
                       <li><strong>Instructor:</strong> ' . $row['Dance_Instructor'] . '</li>
                       <li><strong>Style:</strong> ' . $row['Dance_Style'] . '</li>
